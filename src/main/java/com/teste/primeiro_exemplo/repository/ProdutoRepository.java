@@ -3,6 +3,7 @@ package com.teste.primeiro_exemplo.repository;
 import org.springframework.stereotype.Repository;
 
 import com.teste.primeiro_exemplo.model.Produto;
+import com.teste.primeiro_exemplo.model.exception.ResourceNotFoundException;
 
 import java.lang.StackWalker.Option;
 import java.util.ArrayList;
@@ -71,7 +72,7 @@ public class ProdutoRepository {
         Optional<Produto> produtoEncontrado = obterPorId(produto.getId());
 
         if(produtoEncontrado.isEmpty()){
-            throw new InputMismatchException("Produto não encontrado");
+            throw new ResourceNotFoundException("Produto não encontrado");
         }
 
         // Remover o produto antigo da lista
