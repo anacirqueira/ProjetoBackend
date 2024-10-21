@@ -1,8 +1,18 @@
 package com.teste.primeiro_exemplo.model;
 
+import com.fasterxml.jackson.annotation.JacksonAnnotationsInside;
+import javax.persistence;
+import jakarta.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistance.Id;
+
+
+@Entity
 public class Produto {
     
     //#region Atributos
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
     private String nome;
