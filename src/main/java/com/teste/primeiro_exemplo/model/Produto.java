@@ -1,17 +1,15 @@
 package com.teste.primeiro_exemplo.model;
 
-import com.fasterxml.jackson.annotation.JacksonAnnotationsInside;
-import javax.persistence;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistance.Id;
-
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Produto {
     
     //#region Atributos
-    @Id
+    @Id // vai transformar essa coluna em primary key
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
